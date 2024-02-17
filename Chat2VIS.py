@@ -7,6 +7,9 @@
 import pandas as pd
 import openai
 import streamlit as st
+import random
+import cogdb
+import time
 #import streamlit_nested_layout
 from classes import get_primer,format_question,run_request
 import warnings
@@ -39,6 +42,27 @@ st.sidebar.markdown('<a style="text-align: center;padding-top: 0rem;" href="http
 available_models = {"ChatGPT-4": "gpt-4","ChatGPT-3.5": "gpt-3.5-turbo","GPT-3": "text-davinci-003",
                         "GPT-3.5 Instruct": "gpt-3.5-turbo-instruct","Code Llama":"CodeLlama-34b-Instruct-hf"}
 
+db = Graph("chat2vis.db")
+
+
+# Initialize chat history
+if "messages" not in st.session_state:
+    st.session_state.messages = []
+
+# Display chat messages from history on app rerun
+for message in st.session_state.messages:
+    with st.chat_message(message["role"]):
+        st.markdown(message["content"])
+
+# Accept user input
+if prompt := st.chat_input("List your interest, otherwise upload a simple text file with interest on each line"):
+    # Display user message in chat message container
+    with st.chat_message("user"):
+        st.markdown(prompt)
+    # Add user message to chat history
+    st.session_state.messages.append({"role": "user", "content": prompt})
+    
+'''
 # List to hold datasets
 if "datasets" not in st.session_state:
     datasets = {}
@@ -54,10 +78,14 @@ if "datasets" not in st.session_state:
 else:
     # use the list already loaded
     datasets = st.session_state["datasets"]
+    
+
 
 key_col1,key_col2 = st.columns(2)
 openai_key = key_col1.text_input(label = ":key: OpenAI Key:", help="Required for ChatGPT-4, ChatGPT-3.5, GPT-3, GPT-3.5 Instruct.",type="password")
 hf_key = key_col2.text_input(label = ":hugging_face: HuggingFace Key:",help="Required for Code Llama", type="password")
+'''
+#Dynamically generate datasets based on the converatioan.
 
 with st.sidebar:
     # First we want to choose the dataset, but we will fill it with choices once we've loaded one
