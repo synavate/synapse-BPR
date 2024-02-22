@@ -1,18 +1,19 @@
-#################################################################################
-# Chat2VIS 
-# https://chat2vis.streamlit.app/
-# Paula Maddigan
-#################################################################################
-
 import pandas as pd
-import openai
-import streamlit as st
 import random
-import cogdb
 import time
-#import streamlit_nested_layout
-from classes import get_primer,format_question,run_request
+import openai
+
+from cogb import Graph
+
+import streamlit as st
+
+
+from classes import get_primer, format_question, run_request
 import warnings
+
+gr = cogdb.Graph()
+
+
 warnings.filterwarnings("ignore")
 st.set_option('deprecation.showPyplotGlobalUse', False)
 st.set_page_config(page_icon="chat2vis.png",layout="wide",page_title="Chat2VIS")

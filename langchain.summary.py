@@ -8,7 +8,7 @@ from langchain.chains.combine_documents.stuff import StuffDocumentsChain
 from langchain.chains.llm import LLMChain
 from langchain.prompts import PromptTemplate
 
-  from langchain.chains import MapReduceDocumentsChain, ReduceDocumentsChain
+from langchain.chains import MapReduceDocumentsChain, ReduceDocumentsChain
 from langchain.text_splitter import CharacterTextSplitter
 
 import humanloop
@@ -32,9 +32,6 @@ print(stuff_chain.run(docs))
 
 loader = loader
 docs = loader.load()
-
-llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo-1106")
-chain = load_summarize_chain(llm, chain_type="stuff")
 
 def map_reduce():  
     llm = model
