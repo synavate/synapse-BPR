@@ -1,4 +1,7 @@
 # Synapse Q&D POC 🤗🤗🤗
+
+Streamlit Template Available @ w/ Thanks [frog-land GH](https://github.com/frog-land/Chat2VIS_Streamlit)
+
 ```
 | Quick and dirty POC with Streamlit and Chat Interface ie.
   Build, Panic, Repeat Edition |
@@ -14,8 +17,6 @@
 ### TL;DR
 
 <img src="public/upgnomes.gif" width="350" >
-
-Template Available @ w/ Thanks [grog-land GH](https://github.com/frog-land/Chat2VIS_Streamlit)
 
 ```yaml
 ***Phase 1:*** Use Chat UI w/ Streamlit 
