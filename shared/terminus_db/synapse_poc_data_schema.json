@@ -1,0 +1,54 @@
+[{
+  "@context": {
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "User": "http://terminusdb.com/schema/sys#User",
+    "Goal": "http://terminusdb.com/schema/sys#Goal",
+    "Question": "http://terminusdb.com/schema/sys#Question",
+    "user_hash": {"@id": "User:user_hash", "@type": "xsd:string"},
+    "metadata": {"@id": "User:metadata", "@type": "xsd:string"},
+    "topic_id": {"@id": "Goal:topic_id", "@type": "xsd:string"},
+    "session_id": {"@id": "Goal:session_id", "@type": "xsd:string"},
+    "question_id": {"@id": "Question:question_id", "@type": "xsd:string"},
+    "question_text": {"@id": "Question:question_text", "@type": "xsd:string"},
+    "answer": {"@id": "Question:answer", "@type": "xsd:string"}
+  },
+  "@id": "http://terminusdb.com/schema/sys#",
+  "@type": "sys:Database",
+  "title": "Synapse Enhanced Graph Schema",
+  "description": "A schema designed for representing user interactions, goals, and questions.",
+  "entities": [
+    {
+      "@type": "Class",
+      "@id": "User",
+      "title": "User",
+      "properties": {
+        "user_hash": "xsd:string",
+        "metadata": "xsd:string"
+      },
+      "required": ["user_hash"]
+    },
+    {
+      "@type": "Class",
+      "@id": "Goal",
+      "title": "Goal",
+      "properties": {
+        "topic_id": "xsd:string",
+        "session_id": "xsd:string",
+        "metadata": "xsd:string"
+      },
+      "required": ["topic_id", "session_id"]
+    },
+    {
+      "@type": "Class",
+      "@id": "Question",
+      "title": "Question",
+      "properties": {
+        "question_id": "xsd:string",
+        "question_text": "xsd:string",
+        "answer": "xsd:string"
+      },
+      "required": ["question_id"]
+    }
+  ]
+}
+]
