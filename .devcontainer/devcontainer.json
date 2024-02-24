@@ -1,0 +1,24 @@
+{
+    "name": "Python Development Container",
+    "dockerFile": "../Dockerfile",
+    "context": "..",
+    "customizations": {
+        "vscode": {
+            "settings": {
+      "terminal.integrated.defaultProfile.linux": "bash",
+      "python.linting.enabled": true,
+      "python.linting.pylintEnabled": true,
+      "python.formatting.autopep8Path": true
+    },
+    "extensions": [
+      "kevinrose.vsc-python-indent",
+      "mhutchie.git-graph",
+      "ms-python.debugpy",
+      "ms-python.pylint",
+      "ms-python.python",
+      "ms-python.vscode-pylance"
+    ]},
+    "postCreateCommand": "pip install -r requirements.txt",
+    "remoteUser": "synavate-core"
+  }}
+  

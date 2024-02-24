@@ -1,0 +1,64 @@
+version: '3.8'
+
+services:
+  user-service:
+    build:
+      context: ./user-service
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3000"
+    environment:
+      - NODE_ENV=production
+
+  data-service:
+    build:
+      context: ./data-service
+      dockerfile: Dockerfile
+    ports:
+      - "3002:3000"
+    environment:
+      - NODE_ENV=production
+
+  auth-service:
+    build:
+      context: ./auth-service
+      dockerfile: Dockerfile
+    ports:
+      - "3003:3000"
+    environment:
+      - NODE_ENV=production
+
+
+version: '3.8'
+
+services:
+  app:
+    build: ./frontend/UserDashboardUI/
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+    # Uncomment the below lines if your app connects to a database or other services
+    # depends_on:
+    #   - db
+
+  # Placeholder for a database service
+  # db:
+  #   image: postgres:13
+  #   environment:
+  #     POSTGRES_USER: user
+  #     POSTGRES_PASSWORD: password
+  #     POSTGRES_DB: mydatabase
+  #   volumes:
+  #     - db-data:/var/lib/postgresql/data
+
+  # Placeholder for another service
+  # service2:
+  #   image: another-service
+  #   depends_on:
+  #     - app
+  #     - db
+
+# Named volume for persisting database data
+# volumes:
+#   db-data:
