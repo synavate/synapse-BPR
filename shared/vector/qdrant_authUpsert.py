@@ -1,0 +1,1 @@
+#### QDRANT AUTH UPSERT ####

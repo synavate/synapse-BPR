@@ -10,6 +10,6 @@ TERMINUS_TEAM_URL = os.getenv("TERMINUS_TEAM_URL")
 team = "snyata|07b1"
 client = WOQLClient("https://cloud.terminusdb.com/snyata|07b1/")
 # make sure you have put the token in environment variable
-client.connect(team=team, use_token=True)
+client.connect(team=team, token=TERMINUSDB_ACCESS_TOKEN, use_token=True)
 
 print(client)
