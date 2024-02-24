@@ -1,1 +1,1 @@
-#### QDRANT AUTH UPSERT ####
+#### WEAVIATE AUTH UPSERT ####
