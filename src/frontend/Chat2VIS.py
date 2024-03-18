@@ -3,16 +3,13 @@ import random
 import time
 import openai
 
-from cogb import Graph
+from cogb.torque import Graph
 
 import streamlit as st
 
 
 from classes import get_primer, format_question, run_request
 import warnings
-
-gr = cogdb.Graph()
-
 
 warnings.filterwarnings("ignore")
 st.set_option('deprecation.showPyplotGlobalUse', False)
@@ -43,12 +40,14 @@ st.sidebar.markdown('<a style="text-align: center;padding-top: 0rem;" href="http
 available_models = {"ChatGPT-4": "gpt-4","ChatGPT-3.5": "gpt-3.5-turbo","GPT-3": "text-davinci-003",
                         "GPT-3.5 Instruct": "gpt-3.5-turbo-instruct","Code Llama":"CodeLlama-34b-Instruct-hf"}
 
-db = Graph("chat2vis.db")
+
 
 
 # Initialize chat history
 if "messages" not in st.session_state:
     st.session_state.messages = []
+if "user_graph" not in st.session_state:
+    st.session_state.user_graph = Graph()
 
 # Display chat messages from history on app rerun
 for message in st.session_state.messages:
@@ -60,7 +59,7 @@ if prompt := st.chat_input("List your interest, otherwise upload a simple text f
     # Display user message in chat message container
     with st.chat_message("user"):
         st.markdown(prompt)
-    # Add user message to chat history
+    # Add user message to chat history and graph cogdb
     st.session_state.messages.append({"role": "user", "content": prompt})
     
 '''

@@ -3,7 +3,7 @@ version: '3.8'
 services:
   user-service:
     build:
-      context: ./user-service
+      context: ./backend
       dockerfile: Dockerfile
     ports:
       - "3001:3000"
@@ -12,7 +12,7 @@ services:
 
   data-service:
     build:
-      context: ./data-service
+      context: ./frontend
       dockerfile: Dockerfile
     ports:
       - "3002:3000"
@@ -27,7 +27,6 @@ services:
       - "3003:3000"
     environment:
       - NODE_ENV=production
-
 
 version: '3.8'
 

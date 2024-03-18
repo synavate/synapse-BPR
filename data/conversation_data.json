@@ -1,0 +1,129 @@
+{ 
+    "@type"       : "@context",
+    "@schema"     : "http://terminusdb.com/schema/woql#",
+    "@base"       : "terminusdb://woql/data/" 
+}
+{
+    "2024-02-24T12:00:00Z": [
+        {
+            "user_id": "uuid-for-user-1-hashed",
+            "goal": "To deeply understand Physics and improve my dancing and singing skills.",
+            "understandings": [
+                {
+                    "topic": "Physics",
+                    "responses": [
+                        {
+                            "content": "Physics explains the fundamental laws of the universe.",
+                            "metadata": {
+                                "keywords": [
+                                    "fundamental laws",
+                                    "universe"
+                                ],
+                                "timestamp": "2024-02-24T12:01:00Z"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "topic": "Dancing",
+                    "responses": [
+                        {
+                            "content": "Dancing is both an art form and a method of physical exercise.",
+                            "metadata": {
+                                "keywords": [
+                                    "art form",
+                                    "exercise"
+                                ],
+                                "timestamp": "2024-02-24T12:02:00Z"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "user_id": "uuid-for-user-2-hashed",
+            "goal": "Master the art of comedy and understand its impact on society.",
+            "understandings": [
+                {
+                    "topic": "Comedy",
+                    "responses": [
+                        {
+                            "content": "Comedy can critique social norms while entertaining.",
+                            "metadata": {
+                                "keywords": [
+                                    "social critique",
+                                    "entertainment"
+                                ],
+                                "timestamp": "2024-02-24T13:00:00Z"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "user_id": "uuid-for-user-3-hashed",
+            "goal": "Explore how singing can express complex emotions and connect people.",
+            "understandings": [
+                {
+                    "topic": "Singing",
+                    "responses": [
+                        {
+                            "content": "Singing is a universal language of emotion.",
+                            "metadata": {
+                                "keywords": [
+                                    "emotion",
+                                    "universal language"
+                                ],
+                                "timestamp": "2024-02-24T14:00:00Z"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "user_id": "uuid-for-user-4-hashed",
+            "goal": "Understand the physics behind everyday phenomena.",
+            "understandings": [
+                {
+                    "topic": "Physics",
+                    "responses": [
+                        {
+                            "content": "Everyday phenomena are governed by physical laws.",
+                            "metadata": {
+                                "keywords": [
+                                    "physical laws",
+                                    "everyday phenomena"
+                                ],
+                                "timestamp": "2024-02-24T15:00:00Z"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "user_id": "uuid-for-user-5-hashed",
+            "goal": "Learn dancing to express myself and improve physical health.",
+            "understandings": [
+                {
+                    "topic": "Dancing",
+                    "responses": [
+                        {
+                            "content": "Dancing is a powerful tool for self-expression and health.",
+                            "metadata": {
+                                "keywords": [
+                                    "self-expression",
+                                    "health"
+                                ],
+                                "timestamp": "2024-02-24T16:00:00Z"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

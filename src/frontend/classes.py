@@ -1,9 +1,3 @@
-#################################################################################
-# Chat2VIS supporting functions
-# https://chat2vis.streamlit.app/
-# Paula Maddigan
-#################################################################################
-
 import openai
 from langchain import HuggingFaceHub, LLMChain,PromptTemplate
 

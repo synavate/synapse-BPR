@@ -1,0 +1,56 @@
+[
+{
+  "@context": {
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "User": "doc:User",
+    "Understanding": "doc:Understanding",
+    "Response": "doc:Response",
+    "Metadata": "doc:Metadata",
+    "user_id": {"@id": "doc:user_id", "@type": "xsd:string"},
+    "goal": {"@id": "doc:goal", "@type": "xsd:string"},
+    "topic": {"@id": "doc:topic", "@type": "xsd:string"},
+    "content": {"@id": "doc:content", "@type": "xsd:string"},
+    "keywords": {"@id": "doc:keywords", "@container": "@set", "@type": "xsd:string"},
+    "timestamp": {"@id": "doc:timestamp", "@type": "xsd:dateTime"},
+    "understandings": {"@id": "doc:understandings", "@type": "@id", "@container": "@set"},
+    "responses": {"@id": "doc:responses", "@type": "@id", "@container": "@set"},
+    "metadata": {"@id": "doc:metadata", "@type": "@id", "@container": "@set"}
+  },
+  "@graph": [
+    {
+      "@id": "User",
+      "@type": "rdfs:Class",
+      "rdfs:label": "User",
+      "rdfs:comment": "A user in the conversation",
+      "user_id": "xsd:string",
+      "goal": "xsd:string",
+      "understandings": {"@type": "@id", "@container": "@set", "@class": "Understanding"}
+    },
+    {
+      "@id": "Understanding",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Understanding",
+      "rdfs:comment": "A user's understanding or response to a particular topic",
+      "topic": "xsd:string",
+      "responses": {"@type": "@id", "@container": "@set", "@class": "Response"}
+    },
+    {
+      "@id": "Response",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Response",
+      "rdfs:comment": "A specific response by the user on a topic",
+      "content": "xsd:string",
+      "metadata": {"@type": "@id", "@container": "@set", "@class": "Metadata"}
+    },
+    {
+      "@id": "Metadata",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Metadata",
+      "rdfs:comment": "Metadata about a response, including keywords and timestamp",
+      "keywords": {"@type": "xsd:string", "@container": "@set"},
+      "timestamp": "xsd:dateTime"
+    }
+  ]
+}
+]

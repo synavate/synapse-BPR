@@ -3,7 +3,7 @@ import pymongo
 from dotenv import load_dotenv
 from motor import AsyncIOMotorClient
 
-load_dotenv('../db.env')
+load_dotenv('../db.dev.env')
 
 class MongoDB:
     def __init__(self):

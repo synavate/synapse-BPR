@@ -1,5 +1,5 @@
-from api.examples.examples_model import Examples
-from api.examples.examples_entity import Examples as ExamplesEntity
+from src.examples.examples_model import Examples
+from src.examples.examples_entity import Examples as ExamplesEntity
 from nest.core.decorators import db_request_handler
 from functools import lru_cache
 

@@ -1,7 +1,7 @@
 from nest.core import Controller, Get, Post, Depends
 
-from api.examples.examples_service import ExamplesService
-from api.examples.examples_model import Examples
+from src.examples.examples_service import ExamplesService
+from src.examples.examples_model import Examples
 
 
 @Controller("examples")
